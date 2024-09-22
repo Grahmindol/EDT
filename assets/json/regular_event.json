@@ -1,0 +1,241 @@
+{
+    "Lundi": [
+        {
+            "name": "S.I.",
+            "start": "08:00",
+            "end": "9:00",
+            "content": "event-si",
+            "eventId": "event-1"
+        },
+        {
+            "name": "TD S.I.",
+            "start": "09:00",
+            "end": "10:00",
+            "content": "event-si",
+            "eventId": "event-1",
+            "group": "si1"
+        },
+        {
+            "name": "TD S.I.",
+            "start": "10:00",
+            "end": "11:00",
+            "content": "event-si",
+            "eventId": "event-1",
+            "group": "si2"
+        },
+        {
+            "name": "TD. Phys.",
+            "start": "12:00",
+            "end": "14:00",
+            "content": "event-phy",
+            "eventId": "event-2",
+            "group": "gp2"
+        },
+        {
+            "name": "TD. Phys.",
+            "start": "14:00",
+            "end": "16:00",
+            "content": "event-phy",
+            "eventId": "event-2",
+            "group": "gp1"
+        },
+        {
+            "name": "E.P.S.",
+            "start": "16:00",
+            "end": "18:00",
+            "content": "event-eps",
+            "eventId": "event-1"
+        }
+    ],
+    "Mardi": [
+        {
+            "name": "Info.",
+            "start": "8:00",
+            "end": "10:00",
+            "content": "event-info",
+            "eventId": "event-4"
+        },
+        {
+            "name": "Ang.",
+            "start": "10:00",
+            "end": "11:00",
+            "content": "event-ang",
+            "eventId": "event-1"
+        },
+        {
+            "name": "Maths.",
+            "start": "12:00",
+            "end": "15:00",
+            "content": "event-maths",
+            "eventId": "event-3"
+        },
+        {
+            "name": "TD Info.",
+            "start": "15:00",
+            "end": "17:00",
+            "content": "event-info",
+            "eventId": "event-4",
+            "group": "inf1"
+        },
+        {
+            "name": "Ang.",
+            "start": "16:00",
+            "end": "17:00",
+            "content": "event-ang",
+            "eventId": "event-1",
+            "group": "gp2"
+        },
+        {
+            "name": "TD Info.",
+            "start": "17:00",
+            "end": "19:00",
+            "content": "event-info",
+            "eventId": "event-4",
+            "group": "inf2"
+        },
+        {
+            "name": "Esp.",
+            "start": "17:00",
+            "end": "19:00",
+            "content": "event-info",
+            "eventId": "event-1",
+            "group": "esp"
+        }
+    ],
+    "Mercredi": [
+        {
+            "name": "Phys.",
+            "start": "08:00",
+            "end": "10:00",
+            "content": "event-phy",
+            "eventId": "event-2"
+        },
+        {
+            "name": "Maths.",
+            "start": "10:00",
+            "end": "12:00",
+            "content": "event-maths",
+            "eventId": "event-3"
+        },
+        {
+            "name": "Maths.",
+            "start": "13:00",
+            "end": "14:00",
+            "content": "event-maths",
+            "eventId": "event-3"
+        },
+        {
+            "name": "TD Info.",
+            "start": "14:00",
+            "end": "16:00",
+            "content": "event-info",
+            "eventId": "event-4",
+            "group": "inf3"
+        },
+        {
+            "name": "Info.",
+            "start": "16:00",
+            "end": "18:00",
+            "content": "event-info",
+            "eventId": "event-4"
+        }
+    ],
+    "Jeudi": [
+        {
+            "name": "Fr.",
+            "start": "08:00",
+            "end": "10:00",
+            "content": "event-fr",
+            "eventId": "event-1"
+        },
+        {
+            "name": "Maths.",
+            "start": "10:00",
+            "end": "12:00",
+            "content": "event-maths",
+            "eventId": "event-3"
+        },
+        {
+            "name": "Maths.",
+            "start": "13:00",
+            "end": "15:00",
+            "content": "event-maths",
+            "eventId": "event-3"
+        },
+        {
+            "name": "Ang.",
+            "start": "15:00",
+            "end": "16:00",
+            "content": "event-ang",
+            "eventId": "event-1",
+            "group": "gp1"
+        },
+        {
+            "name": "Italien",
+            "start": "17:00",
+            "end": "19:00",
+            "content": "event-ang",
+            "eventId": "event-1",
+            "group": "ita"
+        },
+        {
+            "name": "Allemand",
+            "start": "17:00",
+            "end": "19:00",
+            "content": "event-ang",
+            "eventId": "event-1",
+            "group": "ger"
+        }
+    ],
+    "Vendredi": [
+        {
+            "name": "TP Phys.",
+            "start": "08:00",
+            "end": "10:00",
+            "content": "event-phy",
+            "eventId": "event-2",
+            "group": "gp2"
+        },
+        {
+            "name": "TD Maths.",
+            "start": "08:00",
+            "end": "10:00",
+            "content": "event-maths",
+            "eventId": "event-3",
+            "group": "gp1"
+        },
+        {
+            "name": "TP Phys.",
+            "start": "10:00",
+            "end": "12:00",
+            "content": "event-phy",
+            "eventId": "event-2",
+            "group": "gp1"
+        },
+        {
+            "name": "TD Maths.",
+            "start": "10:00",
+            "end": "12:00",
+            "content": "event-maths",
+            "eventId": "event-3",
+            "group": "gp2"
+        },
+        {
+            "name": "Phys.",
+            "start": "13:00",
+            "end": "15:00",
+            "content": "event-phy",
+            "eventId": "event-2"
+        }
+    ],
+    "Samedi": [
+        {
+            "name": "D.S",
+            "start": "08:00",
+            "end": "12:00",
+            "content": "ds",
+            "eventId": "event-1"
+        }
+    ],
+    "Dimanche": []
+}

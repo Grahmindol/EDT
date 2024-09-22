@@ -1,0 +1,276 @@
+{
+    "Lundi": [
+        {
+            "name": "Physique-Bouchet-(K25)",
+            "start": "09:00",
+            "end": "10:00",
+            "content": "event-colle-physique",
+            "eventId": "event-2",
+            "group": 1
+        },
+        {
+            "name": "Physique-Kirstetter-(K25)",
+            "start": "09:00",
+            "end": "10:00",
+            "content": "event-colle-physique",
+            "eventId": "event-2",
+            "group": 3
+        },
+        {
+            "name": "Physique-Zavoli-(Labo Phy)",
+            "start": "12:00",
+            "end": "13:00",
+            "content": "event-colle-physique",
+            "eventId": "event-2",
+            "group": 5
+        },
+        {
+            "name": "Physique-Tellier-(Labo Phy)",
+            "start": "12:00",
+            "end": "13:00",
+            "content": "event-colle-physique",
+            "eventId": "event-2",
+            "group": 7
+        },
+        {
+            "name": "Physique-Bouchet-(K25)",
+            "start": "10:00",
+            "end": "11:00",
+            "content": "event-colle-physique",
+            "eventId": "event-2",
+            "group": 9
+        },
+        {
+            "name": "Physique-Kirstetter-(K25)",
+            "start": "10:00",
+            "end": "11:00",
+            "content": "event-colle-physique",
+            "eventId": "event-2",
+            "group": 11
+        },
+        {
+            "name": "Maths-Royer-(K25)",
+            "start": "13:00",
+            "end": "14:00",
+            "content": "event-colle-math",
+            "eventId": "event-2",
+            "group": 1
+        },
+        {
+            "name": "Physique-Zavoli-(Labo Phy)",
+            "start": "13:00",
+            "end": "14:00",
+            "content": "event-colle-physique",
+            "eventId": "event-2",
+            "group": 13
+        },
+        {
+            "name": "Physique-Tellier-(Labo Phy)",
+            "start": "13:00",
+            "end": "14:00",
+            "content": "event-colle-physique",
+            "eventId": "event-2",
+            "group": 15
+        },
+        {
+            "name": "Maths-Royer-(K25)",
+            "start": "14:00",
+            "end": "15:00",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 10
+        },
+        {
+            "name": "Maths-Charvet-(K33)",
+            "start": "14:00",
+            "end": "15:00",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 8
+        },
+        {
+            "name": "Maths-Charvet-(K33)",
+            "start": "14:50",
+            "end": "15:50",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 12
+        }
+    ],
+    "Mardi": [
+        {
+            "name": "Anglais-Bocquillon-(K23)",
+            "start": "18:00",
+            "end": "19:00",
+            "content": "event-colle-anglais",
+            "eventId": "event-1",
+            "group": 2
+        },
+        {
+            "name": "Maths-Pietri-(25)",
+            "start": "18:00",
+            "end": "19:00",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 15
+        },
+        {
+            "name": "Maths-Sebah-(24)",
+            "start": "16:00",
+            "end": "17:00",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 11
+        }
+    ],
+    "Mercredi": [
+        {
+            "name": "Maths-Aufranc-(20)",
+            "start": "14:00",
+            "end": "15:00",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 3
+        },
+        {
+            "name": "Maths-Aufranc-(20)",
+            "start": "14:50",
+            "end": "15:50",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 7
+        },
+        {
+            "name": "Maths-Broizat-(34)",
+            "start": "18:15",
+            "end": "19:15",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 16
+        }
+    ],
+    "Jeudi": [
+        {
+            "name": "Anglais-Eyrard-(K23)",
+            "start": "15:00",
+            "end": "16:00",
+            "content": "event-colle-anglais",
+            "eventId": "event-1",
+            "group": 4
+        },
+        {
+            "name": "Maths-Rozsavolgyi-(K25)",
+            "start": "15:00",
+            "end": "16:00",
+            "content": "event-colle-maths",
+            "eventId": "event-4",
+            "group": 14
+        },
+        {
+            "name": "Maths-Rozsavolgyi-(K25)",
+            "start": "16:00",
+            "end": "17:00",
+            "content": "event-colle-maths",
+            "eventId": "event-4",
+            "group": 6
+        },
+        {
+            "name": "Info-Rozsavolgyi-(K25)",
+            "start": "17:00",
+            "end": "18:00",
+            "content": "event-colle-info",
+            "eventId": "event-3",
+            "group": 15
+        },
+        {
+            "name": "Anglais-Eyrard-(K23)",
+            "start": "16:00",
+            "end": "17:00",
+            "content": "event-colle-anglais",
+            "eventId": "event-1",
+            "group": 10
+        }
+    ],
+    "Vendredi": [
+        {
+            "name": "Physique-Prejlocaj-(K26/27)",
+            "start": "15:00",
+            "end": "16:00",
+            "content": "event-colle-physique",
+            "eventId": "event-2",
+            "group": 6
+        },
+        {
+            "name": "Physique-Prejlocaj-(K26/27)",
+            "start": "16:00",
+            "end": "17:00",
+            "content": "event-colle-physique",
+            "eventId": "event-2",
+            "group": 12
+        },
+        {
+            "name": "Maths-Charvet-(K33)",
+            "start": "16:00",
+            "end": "17:00",
+            "content": "event-colle-physique",
+            "eventId": "event-4",
+            "group": 5
+        },
+        {
+            "name": "Maths-Dubau-(26)",
+            "start": "16:00",
+            "end": "17:00",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 9
+        },
+        {
+            "name": "Maths-Dubau-(26)",
+            "start": "16:45",
+            "end": "17:45",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 13
+        },
+        {
+            "name": "Maths-Ressiguié-(K33)",
+            "start": "17:00",
+            "end": "18:00",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 2
+        },
+        {
+            "name": "Anglais-Connell-(10)",
+            "start": "17:00",
+            "end": "18:00",
+            "content": "event-colle-anglais",
+            "eventId": "event-1",
+            "group": 14
+        },
+        {
+            "name": "Anglais-Connell-(10)",
+            "start": "16:00",
+            "end": "17:00",
+            "content": "event-colle-anglais",
+            "eventId": "event-1",
+            "group": 8
+        },
+        {
+            "name": "Maths-Dubau-(26)",
+            "start": "17:30",
+            "end": "18:30",
+            "content": "event-colle-math",
+            "eventId": "event-4",
+            "group": 4
+        },
+        {
+            "name": "Anglais-Dubau-(K35)",
+            "start": "16:00",
+            "end": "17:00",
+            "content": "event-colle-anglais",
+            "eventId": "event-1",
+            "group": 16
+        }
+    ]
+}

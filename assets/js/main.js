@@ -1,4 +1,4 @@
-(function main() {
+(async  function main() {
 	// Schedule Template - by CodyHouse.co
 	function ScheduleTemplate( element ) {
 		this.element = element;
@@ -335,22 +335,35 @@
 		var timeStamp = parseInt(timeArray[0])*60 + parseInt(timeArray[1]);
 		return timeStamp;
 	};
-	document.getElementById('dateInput').value = (new Date()).toISOString().split('T')[0];
-	populateSchedule("");
-	document.body.style.overflow = 'hidden';
-	document.documentElement.style.setProperty('--schedule-rows-height', ( window.innerHeight - document.getElementById('head').offsetHeight - 50)/12 +'px');
-	console.log(( window.innerHeight - document.getElementById('head').offsetHeight - 30)/11)
+
+	const data = await readJSON('assets/json/regular_event.json');
+    const dataColle = await readJSON('assets/json/colle_event.json');
+
 	var scheduleTemplate = document.getElementsByClassName('js-cd-schedule'),	
 		scheduleTemplateArray = [],
 		resizing = false;
-	
-	if( scheduleTemplate.length > 0 ) { // init ScheduleTemplate objects
-		
+
+	function actualise(){
+		document.documentElement.style.setProperty('--schedule-rows-height', ( window.innerHeight - document.getElementById('head').offsetHeight - 50)/12 +'px');
+		populateSchedule(window.getComputedStyle(document.getElementsByClassName('cd-schedule')[0], '::before').getPropertyValue('content').replace(/'|"/g, ""), data, dataColle);
+		scheduleTemplateArray = []
 		for( var i = 0; i < scheduleTemplate.length; i++) {
 			(function(i){
 				scheduleTemplateArray.push(new ScheduleTemplate(scheduleTemplate[i]));
+				scheduleTemplateArray[i].placeEvents();
+				scheduleTemplateArray[i].scheduleReset();
 			})(i);
 		}
+	}
+
+	document.getElementById('dateInput').value = (new Date()).toISOString().split('T')[0];
+	
+	document.body.style.overflow = 'hidden';
+	
+	
+	if( scheduleTemplate.length > 0 ) { // init ScheduleTemplate objects
+		
+		actualise();
 
 		window.addEventListener('resize', function(event) { 
 			// on resize - update events position and modal position (if open)
@@ -369,19 +382,6 @@
 			}
 		});
 
-		function actualise(){
-			document.documentElement.style.setProperty('--schedule-rows-height', ( window.innerHeight - document.getElementById('head').offsetHeight - 50)/12 +'px');
-			populateSchedule(scheduleTemplateArray[0].mq());
-			scheduleTemplateArray = []
-			for( var i = 0; i < scheduleTemplate.length; i++) {
-				(function(i){
-					scheduleTemplateArray.push(new ScheduleTemplate(scheduleTemplate[i]));
-					scheduleTemplateArray[i].placeEvents();
-					scheduleTemplateArray[i].scheduleReset();
-				})(i);
-			}
-		}
-		actualise()
 		document.getElementById('group-id').addEventListener('change', actualise);
 		document.getElementById('dateInput').addEventListener('change', actualise);
 

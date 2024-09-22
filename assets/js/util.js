@@ -172,3 +172,17 @@ Math.easeInOutQuad = function (t, b, c, d) {
 	t--;
 	return -c/2 * (t*(t-2) - 1) + b;
 };
+
+async function readJSON(file) {
+  try {
+    const response = await fetch(file);
+    if (!response.ok) {
+      throw new Error('Erreur lors de la lecture du fichier JSON');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Erreur:', error);
+  }
+  return {error:[]}
+}
