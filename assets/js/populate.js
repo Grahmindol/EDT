@@ -2,20 +2,19 @@
 
 
 // Function to populate the schedule
-function populateSchedule(mq,data,dataColle) {
+function populateSchedule(mq, data, dataColle) {
     const scheduleContainer = document.querySelector("body > div > div.cd-schedule__events > ul");
     scheduleContainer.innerHTML = "";
-    
 
     Object.entries(data).forEach(([day, events]) => {
         // Create day group
         const dayGroup = document.createElement('li');
         dayGroup.classList.add('cd-schedule__group');
 
-        if(day == getDayOfWeekInFrench()){
+        if (day == getDayOfWeekInFrench()) {
             dayGroup.classList.add('current_day');
-        }else{
-            if(mq == "mobile"){
+        } else {
+            if (mq == "mobile") {
                 return;
             }
         }
@@ -28,13 +27,13 @@ function populateSchedule(mq,data,dataColle) {
 
         // Create events list for the day
         let week = getWeekNumberFromDate();
-        
+
         const eventsList = document.createElement('ul');
 
-        if (events.length < 1){
+        if (events.length < 1) {
             dayGroup.appendChild(eventsList);
-        scheduleContainer.appendChild(dayGroup);
-        return;
+            scheduleContainer.appendChild(dayGroup);
+            return;
         }
 
         events.forEach(event => {
@@ -117,19 +116,19 @@ function populateSchedule(mq,data,dataColle) {
 
         });
 
-        if (dataColle[day] == undefined){
+        if (dataColle[day] == undefined) {
             dayGroup.appendChild(eventsList);
-        scheduleContainer.appendChild(dayGroup);
-        return;
+            scheduleContainer.appendChild(dayGroup);
+            return;
         }
 
         dataColle[day].forEach(event => {
-            
+
             let selectedGroupNumber = document.getElementById('group-id').value;
-            
+
             let colleGroupNumber = getColleData(selectedGroupNumber, week)
-            if(event.group != colleGroupNumber){return;}
-            
+            if (event.group != colleGroupNumber) { return; }
+
 
             const eventItem = document.createElement('li');
             eventItem.classList.add('cd-schedule__event');
@@ -146,6 +145,29 @@ function populateSchedule(mq,data,dataColle) {
             const eventName = document.createElement('em');
             eventName.classList.add('cd-schedule__name');
             eventName.textContent = event.name;
+            console.log("Conelle exeption")
+            if(day == "Vendredi"){ // Conelle exeption
+                console.log("Conelle exeption")
+                if(colleGroupNumber == 8){ // 16h prevue
+                    if(selectedGroupNumber != 15 && selectedGroupNumber != 16){ // si il y a plus de deux eleve
+                        eventLink.setAttribute('data-end', "17:30");
+                    }
+                }else if(colleGroupNumber == 14){ // 17h prévue
+                    const previusGroupe = getGroupeNumber(8,week);
+                    if(previusGroupe != 15 && previusGroupe != 16){ // si il y a plus de deux eleve
+                        eventLink.setAttribute('data-start', "17:30");
+                        eventLink.setAttribute('data-end', "18:30");
+                        if(selectedGroupNumber != 15 && selectedGroupNumber != 16){ // si il y a plus de deux eleve
+                            eventLink.setAttribute('data-end', "19:00");
+                        }
+                    }else{
+                        if(selectedGroupNumber != 15 && selectedGroupNumber != 16){ // si il y a plus de deux eleve
+                            eventLink.setAttribute('data-end', "18:30");
+                        }
+                    }
+
+                }
+            }
 
             eventLink.appendChild(eventName);
             eventItem.appendChild(eventLink);
@@ -188,6 +210,17 @@ function getColleData(groupeNumber, semaine) {
     if (semaine < 3 || semaine > 18 || groupeNumber < 1 || groupeNumber > 16) { return -1; }
     let c = (groupeNumber - (semaine - 3) + 16) % 16
     return (c === 0) ? 16 : c;
+}
+
+function getGroupeNumber(colleNumber, semaine) {
+    if (semaine < 3 || semaine > 18 || colleNumber < 1 || colleNumber > 16) {
+        return -1;
+    }
+
+    let c = (colleNumber === 16) ? 0 : colleNumber;
+    let groupeNumber = (c + (semaine - 3)) % 16;
+
+    return (groupeNumber === 0) ? 16 : groupeNumber;
 }
 
 function getWeekNumberFromDate() {
