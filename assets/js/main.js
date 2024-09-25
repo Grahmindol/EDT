@@ -359,6 +359,13 @@
 	document.getElementById('dateInput').value = (new Date()).toISOString().split('T')[0];
 	
 	document.body.style.overflow = 'hidden';
+
+	const valeurSauvegardee = localStorage.getItem('selected_gp');
+    if (valeurSauvegardee) {
+        document.getElementById('group-id').value = valeurSauvegardee; // Si oui, pré-remplir l'input
+    }else{
+		document.getElementById('group-id').value = 0;
+	}
 	
 	
 	if( scheduleTemplate.length > 0 ) { // init ScheduleTemplate objects
@@ -382,7 +389,10 @@
 			}
 		});
 
-		document.getElementById('group-id').addEventListener('change', actualise);
+		document.getElementById('group-id').addEventListener('change', () => {
+			localStorage.setItem('selected_gp',document.getElementById('group-id').value)
+			actualise();
+		});
 		document.getElementById('dateInput').addEventListener('change', actualise);
 
 		// swipe part
