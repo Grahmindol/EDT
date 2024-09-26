@@ -398,15 +398,16 @@
 		// swipe part
 
 		const swipeArea = document.getElementsByTagName("body")[0];
-		let startX, endX;
+		let startX, endX, startY, endY;
 		swipeArea.addEventListener('touchstart', function(e) {
             // Record the starting touch position
             startX = e.touches[0].clientX;
+			startY = e.touches[0].clientY;
         });
 		swipeArea.addEventListener('touchend', function(e) {
             // Record the ending touch position
             endX = e.changedTouches[0].clientX;
-
+			endY = e.changedTouches[0].clientY;
             handleSwipe();
         });
 		function handleSwipe() {
@@ -414,12 +415,12 @@
 				return
 			}
 			const diffX = endX - startX;
-
+			const diffY = endY - startY;
             // Threshold to avoid detecting tiny swipes
             const swipeThreshold = 50;
 
             // Check if the swipe distance exceeds the threshold
-            if (Math.abs(diffX) > swipeThreshold) {
+            if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY)/2) {
 				let date = new Date(document.getElementById('dateInput').value);
                 if (diffX > 0) {
                     console.log("Swiped Right")
