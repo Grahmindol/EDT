@@ -53,7 +53,7 @@
             "start": "13:00",
             "end": "14:00",
             "content": "event-colle-math",
-            "eventId": "event-2",
+            "eventId": "event-4",
             "group": 1
         },
         {
@@ -193,19 +193,19 @@
     ],
     "Vendredi": [
         {
-            "name": "Physique-Prejlocaj-(K26/27)",
+            "name": "Anglais-Prejlocaj-(K26/27)",
             "start": "15:00",
             "end": "16:00",
-            "content": "event-colle-physique",
-            "eventId": "event-2",
+            "content": "event-colle-anglais",
+            "eventId": "event-1",
             "group": 6
         },
         {
-            "name": "Physique-Prejlocaj-(K26/27)",
+            "name": "Anglais-Prejlocaj-(K26/27)",
             "start": "16:00",
             "end": "17:00",
-            "content": "event-colle-physique",
-            "eventId": "event-2",
+            "content": "event-colle-anglais",
+            "eventId": "event-1",
             "group": 12
         },
         {
@@ -265,7 +265,7 @@
             "group": 4
         },
         {
-            "name": "Anglais-Dubau-(K35)",
+            "name": "Anglais-Sebah-(K35)",
             "start": "16:00",
             "end": "17:00",
             "content": "event-colle-anglais",
