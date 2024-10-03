@@ -27,7 +27,7 @@ function populateSchedule(mq, data, dataColle) {
 
         const eventsList = document.createElement('ul');
 
-        if (events.length < 1 || week < 0) { // if there are no course or is holliday
+        if (events.length < 1 || week <= 0) { // if there are no course or is holliday
             dayGroup.appendChild(eventsList);
             scheduleContainer.appendChild(dayGroup);
             return;
@@ -239,7 +239,7 @@ function getWeekNumberFromDate() {
     ].map(dateStr => new Date(dateStr));
 
     // Find the index of the week start date that matches the modified date
-    return  weekStartDates.findIndex(weekStartDate => weekStartDate.getTime() === date.getTime());
+    return  weekStartDates.findIndex(weekStartDate => weekStartDate.getTime() === date.getTime()) + 1;
 }
 
 
