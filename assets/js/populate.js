@@ -5,6 +5,7 @@
 function populateSchedule(mq, data, dataColle) {
     const scheduleContainer = document.querySelector("body > div > div.cd-schedule__events > ul");
     scheduleContainer.innerHTML = "";
+    const week = getWeekNumberFromDate();
 
     Object.entries(data).forEach(([day, events]) => {
         // Create day group
@@ -13,10 +14,8 @@ function populateSchedule(mq, data, dataColle) {
 
         if (day == getDayOfWeekInFrench()) {
             dayGroup.classList.add('current_day');
-        } else {
-            if (mq == "mobile") {
-                return;
-            }
+        } else if (mq == "mobile") {
+            return;
         }
 
         // Add day label
@@ -25,12 +24,10 @@ function populateSchedule(mq, data, dataColle) {
         topInfo.innerHTML = `<span>${day}</span>`;
         dayGroup.appendChild(topInfo);
 
-        // Create events list for the day
-        let week = getWeekNumberFromDate();
 
         const eventsList = document.createElement('ul');
 
-        if (events.length < 1) {
+        if (events.length < 1 || week < 0) { // if there are no course or is holliday
             dayGroup.appendChild(eventsList);
             scheduleContainer.appendChild(dayGroup);
             return;
@@ -224,21 +221,29 @@ function getGroupeNumber(colleNumber, semaine) {
 }
 
 function getWeekNumberFromDate() {
-    const date = new Date(document.getElementById('dateInput').value)
-    // Set the reference start date (e.g., September 1, 2024)
-    const startDate = new Date('2024-09-01');
+    let date = new Date(document.getElementById('dateInput').value);
 
-    // Get the difference in time between the input date and the start date
-    const timeDiff = date - startDate;
+    // Adjust date to the Monday of that week
+    date.setDate(date.getDate() - date.getDay() + 1);
+    date.setTime(Math.floor(date.getTime()/86400000)*86400000); 
 
-    // Convert the time difference from milliseconds to days
-    const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const weekStartDates = [
+        "2024-09-02", "2024-09-09", "2024-09-16", "2024-09-23", "2024-09-30",
+        "2024-10-07", "2024-10-14", "2024-11-04", "2024-11-11", "2024-11-18",
+        "2024-11-25", "2024-12-02", "2024-12-09", "2024-12-16", "2025-01-06",
+        "2025-01-13", "2025-01-20", "2025-01-27", "2025-02-03", "2025-02-24",
+        "2025-03-03", "2025-03-10", "2025-03-17", "2025-03-24", "2025-03-31",
+        "2025-04-21", "2025-04-28", "2025-05-05", "2025-05-12", "2025-05-19",
+        "2025-05-26", "2025-06-02", "2025-06-09", "2025-06-16", "2025-06-23",
+        "2025-06-30"
+    ].map(dateStr => new Date(dateStr));
 
-    // Calculate the week number by dividing the days difference by 7
-    const weekNumber = Math.floor(daysDiff / 7) + 1;
-
-    return weekNumber;
+    // Find the index of the week start date that matches the modified date
+    return  weekStartDates.findIndex(weekStartDate => weekStartDate.getTime() === date.getTime());
 }
+
+
+
 
 function getDayOfWeekInFrench() {
     const daysInFrench = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
