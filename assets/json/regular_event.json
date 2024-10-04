@@ -228,14 +228,6 @@
             "eventId": "event-2"
         }
     ],
-    "Samedi": [
-        {
-            "name": "D.S",
-            "start": "08:00",
-            "end": "12:00",
-            "content": "ds",
-            "eventId": "event-1"
-        }
-    ],
+    "Samedi": [],
     "Dimanche": []
 }

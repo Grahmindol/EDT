@@ -338,14 +338,15 @@
 
 	const data = await readJSON('assets/json/regular_event.json');
     const dataColle = await readJSON('assets/json/colle_event.json');
+	const dataDS = await readJSON('assets/json/ds_event.json');
 
 	var scheduleTemplate = document.getElementsByClassName('js-cd-schedule'),	
 		scheduleTemplateArray = [],
 		resizing = false;
 
 	function actualise(){
-		document.documentElement.style.setProperty('--schedule-rows-height', ( window.innerHeight - document.getElementById('head').offsetHeight - 50)/12 +'px');
-		populateSchedule(window.getComputedStyle(document.getElementsByClassName('cd-schedule')[0], '::before').getPropertyValue('content').replace(/'|"/g, ""), data, dataColle);
+		document.documentElement.style.setProperty('--schedule-rows-height',Math.floor( ( window.innerHeight - document.getElementById('head').offsetHeight - 25)/12) +'px');
+		populateSchedule(window.getComputedStyle(document.getElementsByClassName('cd-schedule')[0], '::before').getPropertyValue('content').replace(/'|"/g, ""), data, dataColle,dataDS);
 		scheduleTemplateArray = []
 		for( var i = 0; i < scheduleTemplate.length; i++) {
 			(function(i){
