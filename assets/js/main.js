@@ -312,6 +312,9 @@
 							eval(scripts[i].innerHTML);
 						}
 					}
+				}else{
+					self.modal.getElementsByClassName('cd-schedule-modal__event-info')[0].innerHTML = ""
+					Util.addClass(self.modal, 'cd-schedule-modal--content-loaded');
 				}
 			}
 		};
