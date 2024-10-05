@@ -48,6 +48,7 @@ Les contributions sont les bienvenues ! Voici comment vous pouvez aider :
 - [Microsoft Power Platform Community](https://powerusers.microsoft.com/)
 - [Tutoriel de création d'une Power App](https://docs.microsoft.com/fr-fr/learn/modules/create-an-app-in-a-day/)
 - [Article on CodyHouse](https://codyhouse.co/gem/schedule-template)
+- [Color Picker on CodePen](https://codepen.io/mfort/pen/xxmoeXd)
 
 ## 🛡️ Licence
 
@@ -55,7 +56,7 @@ Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plu
 
 ---
 
-**Auteur** : [Grahmindol](https://github.com/Grahmindol)
+**Auteur** : [Ton Nom](https://github.com/Grahmindol)
 
 ---
 

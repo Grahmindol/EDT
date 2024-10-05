@@ -755,8 +755,17 @@ a{color:hsl(162,14%,68%);color:var(--cd-color-event-3)}
     margin: 16px;
 }
 
+:root{
+    --event-0-color: #5c5470;
+    --event-1-color: #fe9797;
+    --event-2-color: #560764;
+    --event-3-color: #913175;
+    --event-4-color: #dd5b82;
+    --event-5-color: #2a2438;
+}
+
 .cd-main-header {
-    background-color: #2a2438;
+    background-color: var(--event-5-color);
     padding: 20px; /* Padding around the header */
     display: flex; /* Flexbox for layout */
     flex-direction: column;
@@ -786,7 +795,7 @@ a{color:hsl(162,14%,68%);color:var(--cd-color-event-3)}
     border-radius: 5px; /* Rounded corners */
     border: none; /* Remove default border */
     outline: none; /* Remove outline on focus */
-    background-color: #5c5470;
+    background-color: var(--event-0-color);
     color: #dbd8e3;
 }
 
@@ -797,26 +806,29 @@ a{color:hsl(162,14%,68%);color:var(--cd-color-event-3)}
     border-radius: 5px; /* Rounded corners */
     border: none; /* Remove default border */
     outline: none; /* Remove outline on focus */
-    background-color: #5c5470;
+    background-color: var(--event-0-color);
     color: #dbd8e3;
 }
 
 .cd-schedule__event [data-event="event-1"],.cd-schedule-modal[data-event="event-1"] .cd-schedule-modal__header-bg{
-    background:#fe9797;
+    background:var(--event-1-color);
 }
 .cd-schedule__event [data-event="event-2"],.cd-schedule-modal[data-event="event-2"] .cd-schedule-modal__header-bg{
-    background:#560764;
+    background:var(--event-2-color);
 }
 .cd-schedule__event [data-event="event-3"],.cd-schedule-modal[data-event="event-3"] .cd-schedule-modal__header-bg{
-    background:#913175;
+    background:var(--event-3-color);
 }
 .cd-schedule__event [data-event="event-4"],.cd-schedule-modal[data-event="event-4"] .cd-schedule-modal__header-bg{
-    background:#dd5b82;
+    background:var(--event-4-color);
+}
+.cd-schedule__event [data-event="event-0"],.cd-schedule-modal[data-event="event-0"] .cd-schedule-modal__header-bg{
+    background:var(--event-0-color);
 }
 
 body {
-    background-color: #5c5470;
-    background: linear-gradient(to top, #5c5470 50%,  #2a2438 100%);
+    background-color: --event-0-color;
+    background: linear-gradient(to top, var(--event-0-color) 50%,  var(--event-5-color) 100%);
 }
 
 .js .cd-schedule__top-info {
@@ -831,3 +843,4 @@ body {
     border-top-right-radius: 32px;
     border: 2px solid #dbd8e3
 }
+

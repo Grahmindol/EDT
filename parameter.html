@@ -1,0 +1,695 @@
+<div class="cd-schedule-modal__event-info">
+    <ul id="myUL">
+        <li><span class="caret">Couleurs Personalisé</span>
+            <ul class="nested">
+                <li>
+                    <div>
+                        <button id="color_reset"> Reset Colors</button>
+                        <button id="color_save"> Save Colors</button>
+                    </div>
+                </li>
+                <!-- Color Picker 0 -->
+                <li>
+                    <div class="color-slider-container flexrow swatch" id="picker-0">
+                        <div class="flexcol color-slider-label">
+                            <div class="color-slider-title"><span>Couleur N°0</span></div>
+                        </div>
+                        <div class="flexcol color-sliders">
+                            <input type="range" min="0" max="360" value="180" class="color-slider color-slider--hue">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--saturation">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--lightness">
+                        </div>
+                    </div>
+                </li>
+                <!-- Color Picker 1 -->
+                <li>
+                    <div class="color-slider-container flexrow swatch" id="picker-1">
+                        <div class="flexcol color-slider-label">
+                            <div class="color-slider-title"><span>Couleur N°1</span></div>
+                        </div>
+                        <div class="flexcol color-sliders">
+                            <input type="range" min="0" max="360" value="180" class="color-slider color-slider--hue">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--saturation">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--lightness">
+                        </div>
+                    </div>
+                </li>
+                <!-- Color Picker 2 -->
+                <li>
+                    <div class="color-slider-container flexrow swatch" id="picker-2">
+                        <div class="flexcol color-slider-label">
+                            <div class="color-slider-title"><span>Couleur N°2</span></div>
+                        </div>
+                        <div class="flexcol color-sliders">
+                            <input type="range" min="0" max="360" value="180" class="color-slider color-slider--hue">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--saturation">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--lightness">
+                        </div>
+                    </div>
+                </li>
+                <!-- Color Picker 3 -->
+                <li>
+                    <div class="color-slider-container flexrow swatch" id="picker-3">
+                        <div class="flexcol color-slider-label">
+                            <div class="color-slider-title"><span>Couleur N°3</span></div>
+                        </div>
+                        <div class="flexcol color-sliders">
+                            <input type="range" min="0" max="360" value="180" class="color-slider color-slider--hue">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--saturation">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--lightness">
+                        </div>
+                    </div>
+                </li>
+                <!-- Color Picker 4 -->
+                <li>
+                    <div class="color-slider-container flexrow swatch" id="picker-4">
+                        <div class="flexcol color-slider-label">
+                            <div class="color-slider-title"><span>Couleur N°4</span></div>
+                        </div>
+                        <div class="flexcol color-sliders">
+                            <input type="range" min="0" max="360" value="180" class="color-slider color-slider--hue">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--saturation">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--lightness">
+                        </div>
+                    </div>
+                </li>
+                <!-- Color Picker 5 -->
+                <li>
+                    <div class="color-slider-container flexrow swatch" id="picker-5">
+                        <div class="flexcol color-slider-label">
+                            <div class="color-slider-title"><span>Couleur N°5</span></div>
+                        </div>
+                        <div class="flexcol color-sliders">
+                            <input type="range" min="0" max="360" value="180" class="color-slider color-slider--hue">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--saturation">
+                            <input type="range" min="0" max="100" value="50"
+                                class="color-slider color-slider--lightness">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li><span class="caret">Cours Personnalisé</span>
+            <ul class="nested">
+                <li>Water</li>
+                <li>Coffee</li>
+
+            </ul>
+        </li>
+        <li><span class="caret">Exporter l'EDT</span>
+            <ul class="nested">
+                <li>En PDF</li>
+                <li>etc ...</li>
+
+            </ul>
+        </li>
+    </ul>
+    <style>
+        :root {
+            --coolwhite: hsl(228, 56%, 98%);
+
+            --hue-wildcard: 180;
+            --saturation-wildcard: 50%;
+            --lightness-wildcard: 50%;
+        }
+
+        .cd-schedule-modal__event-info .color-slider-container {
+            width: 100%;
+            align-items: center;
+            /* Align items vertically in the middle */
+        }
+
+        .cd-schedule-modal__event-info .color-slider-label {
+            flex: 1;
+            /* Take 1 part of the available space */
+        }
+
+        .cd-schedule-modal__event-info .color-sliders {
+            flex: 3;
+            /* Take 3 parts of the available space */
+        }
+
+        .cd-schedule-modal__event-info .color-slider {
+            width: 100%;
+            /* Ensure sliders take full width within their container */
+            margin: 5px 0;
+            /* Optional: Add some spacing between sliders */
+        }
+
+        .cd-schedule-modal__event-info .flexrow {
+            display: flex;
+        }
+
+        .cd-schedule-modal__event-info .flexcol {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cd-schedule-modal__event-info {
+            background: var(--coolwhite);
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            font-family: 'Golos Text', sans-serif;
+            padding-bottom: 1rem;
+        }
+
+        .cd-schedule-modal__event-info .color-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 12px;
+            border-radius: 10px;
+            outline: none;
+            margin-block: 1rem;
+        }
+
+        .cd-schedule-modal__event-info .color-slider--hue {
+            background: linear-gradient(to right,
+                    hsl(0, 100%, 50%),
+                    hsl(30, 100%, 50%),
+                    hsl(60, 100%, 50%),
+                    hsl(90, 100%, 50%),
+                    hsl(120, 100%, 50%),
+                    hsl(150, 100%, 50%),
+                    hsl(180, 100%, 50%),
+                    hsl(210, 100%, 50%),
+                    hsl(240, 100%, 50%),
+                    hsl(270, 100%, 50%),
+                    hsl(300, 100%, 50%),
+                    hsl(330, 100%, 50%),
+                    hsl(360, 100%, 50%));
+        }
+
+        /* Saturation Slider Gradient for Picker 0 */
+        .cd-schedule-modal__event-info #picker-0 .color-slider--saturation {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-0), 0%, 50%),
+                    hsl(var(--hue-wildcard-0), 100%, 50%));
+        }
+
+        /* Lightness Slider Gradient for Picker 0 */
+        .cd-schedule-modal__event-info #picker-0 .color-slider--lightness {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-0), 0%, 0%),
+                    hsl(var(--hue-wildcard-0), 0%, 100%));
+        }
+
+        /* Saturation Slider Gradient for Picker 1 */
+        .cd-schedule-modal__event-info #picker-1 .color-slider--saturation {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-1), 0%, 50%),
+                    hsl(var(--hue-wildcard-1), 100%, 50%));
+        }
+
+        /* Lightness Slider Gradient for Picker 1 */
+        .cd-schedule-modal__event-info #picker-1 .color-slider--lightness {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-1), 0%, 0%),
+                    hsl(var(--hue-wildcard-1), 0%, 100%));
+        }
+
+        /* Saturation Slider Gradient for Picker 2 */
+        .cd-schedule-modal__event-info #picker-2 .color-slider--saturation {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-2), 0%, 50%),
+                    hsl(var(--hue-wildcard-2), 100%, 50%));
+        }
+
+        /* Lightness Slider Gradient for Picker 2 */
+        .cd-schedule-modal__event-info #picker-2 .color-slider--lightness {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-2), 0%, 0%),
+                    hsl(var(--hue-wildcard-2), 0%, 100%));
+        }
+
+        /* Saturation Slider Gradient for Picker 3 */
+        .cd-schedule-modal__event-info #picker-3 .color-slider--saturation {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-3), 0%, 50%),
+                    hsl(var(--hue-wildcard-3), 100%, 50%));
+        }
+
+        /* Lightness Slider Gradient for Picker 3 */
+        .cd-schedule-modal__event-info #picker-3 .color-slider--lightness {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-3), 0%, 0%),
+                    hsl(var(--hue-wildcard-3), 0%, 100%));
+        }
+
+        /* Saturation Slider Gradient for Picker 4 */
+        .cd-schedule-modal__event-info #picker-4 .color-slider--saturation {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-4), 0%, 50%),
+                    hsl(var(--hue-wildcard-4), 100%, 50%));
+        }
+
+        /* Lightness Slider Gradient for Picker 4 */
+        .cd-schedule-modal__event-info #picker-4 .color-slider--lightness {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-4), 0%, 0%),
+                    hsl(var(--hue-wildcard-4), 0%, 100%));
+        }
+
+        /* Saturation Slider Gradient for Picker 5 */
+        .cd-schedule-modal__event-info #picker-5 .color-slider--saturation {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-5), 0%, 50%),
+                    hsl(var(--hue-wildcard-5), 100%, 50%));
+        }
+
+        /* Lightness Slider Gradient for Picker 5 */
+        .cd-schedule-modal__event-info #picker-5 .color-slider--lightness {
+            background: linear-gradient(to right,
+                    hsl(var(--hue-wildcard-5), 0%, 0%),
+                    hsl(var(--hue-wildcard-5), 0%, 100%));
+        }
+
+        .cd-schedule-modal__event-info .color-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            cursor: pointer;
+            position: relative;
+            background: hsl(0, 0%, 50%);
+        }
+
+        .cd-schedule-modal__event-info .color-slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            cursor: pointer;
+            background: hsl(0, 0%, 50%);
+        }
+
+        /* Styles for Picker 0 */
+        .cd-schedule-modal__event-info #picker-0 .color-slider--hue::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-0), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-0 .color-slider--hue::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-0), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-0 .color-slider--saturation::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-0), var(--saturation-wildcard-0), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-0 .color-slider--saturation::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-0), var(--saturation-wildcard-0), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-0 .color-slider--lightness::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-0), 0%, var(--lightness-wildcard-0));
+        }
+
+        .cd-schedule-modal__event-info #picker-0 .color-slider--lightness::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-0), 0%, var(--lightness-wildcard-0));
+        }
+
+        .cd-schedule-modal__event-info #picker-0 {
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.125);
+            border-radius: 15px;
+            padding: 1rem;
+            background: var(--event-0-color);
+        }
+
+        /* Styles for Picker 1 */
+        .cd-schedule-modal__event-info #picker-1 .color-slider--hue::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-1), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-1 .color-slider--hue::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-1), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-1 .color-slider--saturation::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-1), var(--saturation-wildcard-1), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-1 .color-slider--saturation::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-1), var(--saturation-wildcard-1), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-1 .color-slider--lightness::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-1), 0%, var(--lightness-wildcard-1));
+        }
+
+        .cd-schedule-modal__event-info #picker-1 .color-slider--lightness::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-1), 0%, var(--lightness-wildcard-1));
+        }
+
+        .cd-schedule-modal__event-info #picker-1 {
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.125);
+            border-radius: 15px;
+            padding: 1rem;
+            background: var(--event-1-color);
+        }
+
+        /* Styles for Picker 2 */
+        .cd-schedule-modal__event-info #picker-2 .color-slider--hue::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-2), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-2 .color-slider--hue::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-2), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-2 .color-slider--saturation::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-2), var(--saturation-wildcard-2), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-2 .color-slider--saturation::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-2), var(--saturation-wildcard-2), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-2 .color-slider--lightness::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-2), 0%, var(--lightness-wildcard-2));
+        }
+
+        .cd-schedule-modal__event-info #picker-2 .color-slider--lightness::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-2), 0%, var(--lightness-wildcard-2));
+        }
+
+        .cd-schedule-modal__event-info #picker-2 {
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.125);
+            border-radius: 15px;
+            padding: 1rem;
+            background: var(--event-2-color);
+        }
+
+        /* Styles for Picker 3 */
+        .cd-schedule-modal__event-info #picker-3 .color-slider--hue::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-3), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-3 .color-slider--hue::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-3), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-3 .color-slider--saturation::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-3), var(--saturation-wildcard-3), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-3 .color-slider--saturation::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-3), var(--saturation-wildcard-3), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-3 .color-slider--lightness::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-3), 0%, var(--lightness-wildcard-3));
+        }
+
+        .cd-schedule-modal__event-info #picker-3 .color-slider--lightness::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-3), 0%, var(--lightness-wildcard-3));
+        }
+
+        .cd-schedule-modal__event-info #picker-3 {
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.125);
+            border-radius: 15px;
+            padding: 1rem;
+            background: var(--event-3-color);
+        }
+
+        /* Styles for Picker 4 */
+        .cd-schedule-modal__event-info #picker-4 .color-slider--hue::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-4), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-4 .color-slider--hue::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-4), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-4 .color-slider--saturation::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-4), var(--saturation-wildcard-4), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-4 .color-slider--saturation::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-4), var(--saturation-wildcard-4), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-4 .color-slider--lightness::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-4), 0%, var(--lightness-wildcard-4));
+        }
+
+        .cd-schedule-modal__event-info #picker-4 .color-slider--lightness::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-4), 0%, var(--lightness-wildcard-4));
+        }
+
+        .cd-schedule-modal__event-info #picker-4 {
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.125);
+            border-radius: 15px;
+            padding: 1rem;
+            background: var(--event-4-color);
+        }
+
+        /* Styles for Picker 5 */
+        .cd-schedule-modal__event-info #picker-5 .color-slider--hue::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-5), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-5 .color-slider--hue::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-5), 100%, 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-5 .color-slider--saturation::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-5), var(--saturation-wildcard-5), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-5 .color-slider--saturation::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-5), var(--saturation-wildcard-5), 50%);
+        }
+
+        .cd-schedule-modal__event-info #picker-5 .color-slider--lightness::-webkit-slider-thumb {
+            background: hsl(var(--hue-wildcard-5), 0%, var(--lightness-wildcard-5));
+        }
+
+        .cd-schedule-modal__event-info #picker-5 .color-slider--lightness::-moz-range-thumb {
+            background: hsl(var(--hue-wildcard-5), 0%, var(--lightness-wildcard-5));
+        }
+
+        .cd-schedule-modal__event-info #picker-5 {
+            border: 5px solid #ffffff;
+            box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.125);
+            border-radius: 15px;
+            padding: 1rem;
+            background: var(--event-5-color);
+        }
+
+        /* Remove default bullets */
+        .cd-schedule-modal__event-info ul {
+            list-style-type: none;
+            margin: 15px;
+            padding: 15px;
+        }
+
+        /* Style the caret/arrow */
+        .cd-schedule-modal__event-info .caret {
+            cursor: pointer;
+            user-select: none;
+            /* Prevent text selection */
+        }
+
+        /* Create the caret/arrow with a unicode, and style it */
+        .cd-schedule-modal__event-info .caret::before {
+            content: "\25B6";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+        .cd-schedule-modal__event-info .caret-down::before {
+            transform: rotate(90deg);
+        }
+
+        /* Hide the nested list */
+        .cd-schedule-modal__event-info .nested {
+            display: none;
+        }
+
+        /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+        .cd-schedule-modal__event-info .active {
+            display: block;
+        }
+    </style>
+    <script>
+        var toggler = document.getElementsByClassName("caret");
+        var i;
+
+        for (i = 0; i < toggler.length; i++) {
+            toggler[i].addEventListener("click", function () {
+                this.parentElement.querySelector(".nested").classList.toggle("active");
+                this.classList.toggle("caret-down");
+            });
+
+        }
+
+        // Function to convert hex to HSL
+        function hexToHSL(hex) {
+            // Remove the '#' if it exists
+            hex = hex.replace('#', '');
+
+            // Parse the r, g, b values
+            let r = parseInt(hex.substring(0, 2), 16) / 255;
+            let g = parseInt(hex.substring(2, 4), 16) / 255;
+            let b = parseInt(hex.substring(4, 6), 16) / 255;
+
+            // Find the minimum and maximum values to get lightness
+            let max = Math.max(r, g, b), min = Math.min(r, g, b);
+            let h, s, l = (max + min) / 2;
+
+            if (max === min) {
+                h = s = 0; // achromatic
+            } else {
+                let d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                    case g: h = (b - r) / d + 2; break;
+                    case b: h = (r - g) / d + 4; break;
+                }
+                h /= 6;
+            }
+
+            // Convert to degrees and percentages
+            h = Math.round(h * 360);
+            s = Math.round(s * 100);
+            l = Math.round(l * 100);
+
+            return [h, s, l]; // Return HSL as an array
+        }
+
+        function hslToHex(h, s, l) {
+            s /= 100;
+            l /= 100;
+
+            let c = (1 - Math.abs(2 * l - 1)) * s;
+            let x = c * (1 - Math.abs((h / 60) % 2 - 1));
+            let m = l - c / 2;
+            let r = 0, g = 0, b = 0;
+
+            if (0 <= h && h < 60) {
+                r = c; g = x; b = 0;
+            } else if (60 <= h && h < 120) {
+                r = x; g = c; b = 0;
+            } else if (120 <= h && h < 180) {
+                r = 0; g = c; b = x;
+            } else if (180 <= h && h < 240) {
+                r = 0; g = x; b = c;
+            } else if (240 <= h && h < 300) {
+                r = x; g = 0; b = c;
+            } else if (300 <= h && h < 360) {
+                r = c; g = 0; b = x;
+            }
+
+            r = Math.round((r + m) * 255).toString(16).padStart(2, '0');
+            g = Math.round((g + m) * 255).toString(16).padStart(2, '0');
+            b = Math.round((b + m) * 255).toString(16).padStart(2, '0');
+
+            return `#${r}${g}${b}`;
+        }
+
+        // find the root where the variables are set
+        const root = document.querySelector(':root');
+
+
+        for (let i = 0; i <= 5; i++) {
+            let picker = document.getElementById(`picker-${i}`);
+            let hueSlider = picker.getElementsByClassName("color-slider--hue")[0];
+            let saturationSlider = picker.getElementsByClassName("color-slider--saturation")[0];
+            let lightnessSlider = picker.getElementsByClassName("color-slider--lightness")[0];
+
+            hueSlider.oninput = function () {
+                root.style.setProperty(`--hue-wildcard-${i}`, hueSlider.value);
+                root.style.setProperty(`--event-${i}-color`, hslToHex(hueSlider.value, saturationSlider.value, lightnessSlider.value));
+            };
+
+            saturationSlider.oninput = function () {
+                root.style.setProperty(`--saturation-wildcard-${i}`, saturationSlider.value + '%');
+                root.style.setProperty(`--event-${i}-color`, hslToHex(hueSlider.value, saturationSlider.value, lightnessSlider.value));
+            };
+
+            lightnessSlider.oninput = function () {
+                root.style.setProperty(`--lightness-wildcard-${i}`, lightnessSlider.value + '%');
+                root.style.setProperty(`--event-${i}-color`, hslToHex(hueSlider.value, saturationSlider.value, lightnessSlider.value));
+            };
+        }
+
+
+        // Function to initialize sliders for all pickers
+        function initSliders(reset = false) {
+            const root = document.querySelector(':root');
+
+            const colors = reset ? ["#5c5470", "#fe9797", "#560764", "#913175", "#dd5b82", "#2a2438"] : [
+                getComputedStyle(root).getPropertyValue('--event-0-color').trim(),
+                getComputedStyle(root).getPropertyValue('--event-1-color').trim(),
+                getComputedStyle(root).getPropertyValue('--event-2-color').trim(),
+                getComputedStyle(root).getPropertyValue('--event-3-color').trim(),
+                getComputedStyle(root).getPropertyValue('--event-4-color').trim(),
+                getComputedStyle(root).getPropertyValue('--event-5-color').trim()
+            ];
+
+
+
+            colors.forEach((color, index) => {
+                const [h, s, l] = hexToHSL(color);
+                const picker = document.getElementById(`picker-${index}`);
+                const hueSlider = picker.getElementsByClassName("color-slider--hue")[0];
+                const saturationSlider = picker.getElementsByClassName("color-slider--saturation")[0];
+                const lightnessSlider = picker.getElementsByClassName("color-slider--lightness")[0];
+
+                // Set slider values
+                hueSlider.value = h;
+                saturationSlider.value = s;
+                lightnessSlider.value = l;
+
+                // Update root CSS variables
+                root.style.setProperty(`--hue-wildcard-${index}`, h);
+                root.style.setProperty(`--saturation-wildcard-${index}`, `${s}%`);
+                root.style.setProperty(`--lightness-wildcard-${index}`, `${l}%`);
+                root.style.setProperty(`--event-${index}-color`, hslToHex(h, s, l));
+            });
+        }
+
+        function saveSliders() {
+            const root = document.querySelector(':root');
+            for (let index = 0; index <= 5; index++) {
+                let color = getComputedStyle(root).getPropertyValue(`--event-${index}-color`).trim();
+                localStorage.setItem(`event-${index}-color`, color);
+            }
+        }
+
+        document.getElementById("color_reset").addEventListener("click",(event)=>{initSliders(true);saveSliders()})
+        document.getElementById("color_save").addEventListener("click",(event)=>{saveSliders()})
+        
+        initSliders();
+    </script>
+
+</div>
